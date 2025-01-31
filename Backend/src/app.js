@@ -179,9 +179,27 @@ app.delete('/citas/:id', async (req, res) => {  // Operacion para borrar una cit
 });
 
 
+// -------------------------------------Ruta para la autenticación de login-------------------------------------
+app.post('/usuarios', async (req, res) => {
+    const { email, password } = req.body;
+
+    const user = await db('usuarios').select('*').from('usuarios').where('email', email).first();
+
+    if (!user) {
+        return res.status(401).json({ error: 'User not found' });
+    }
+
+    if (user.password !== password) {
+        return res.status(401).json({ error: 'Incorrect Password' });
+    }
+
+    res.json({ success: true, message:  'Succesful login' });
+});
+
+
+
 //----------------------------------------------Abro un servidor en puerto 8080----------------------------------------------
 
 app.listen(8080, () => {
     console.log('Servidor iniciado en http://localhost:8080');
 });
-

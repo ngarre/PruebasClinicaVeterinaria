@@ -1,1 +1,30 @@
-**/node_modules/
+**/frontend/node_modules/
+**/backend/node_modules/
+**/.parcel-cache
+
+
+npm start
+
+─── nereatm-pruebasclinicaveterinaria/
+    ├── README.md
+    ├── Backend/
+    │   └── src/
+    │       ├── app.js
+    │       ├── package-lock.json
+    │       ├── package.json
+    │       └── vet.db
+    └── Frontend/
+        ├── documentsUtil.js
+        ├── Citas/
+        │   ├── citas.html
+        │   ├── citas.js
+        │   ├── registro_citas.html
+        │   └── registro_citas.js
+        ├── Mascotas/
+        │   ├── mascotas.html
+        │   ├── mascotas.js
+        │   ├── registro_mascotas.html
+        │   └── registro_mascotas.js
+        └── index/
+            ├── index.html
+            └── index.js
